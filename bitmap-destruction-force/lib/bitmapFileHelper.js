@@ -2,6 +2,17 @@
 
 const fs = require('fs');
 
-const buf = fs.readFileSync('../../assets/bitmap.bmp');
+//const buf = fs.readFileSync('../../assets/bitmap.bmp');
 
-fs.writeFileSync('./newfile.bmp', buf);
+var buf;
+
+module.exports = function(callback) {
+  fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
+    buf = data;
+    console.log('buf',buf);
+  });
+}
+
+module.exports();
+
+//fs.writeFileSync('./newfile.bmp', buf);
