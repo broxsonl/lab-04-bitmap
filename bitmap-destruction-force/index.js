@@ -10,7 +10,7 @@ const bitmapFileHelper = require('./lib/bitmapFileHelper.js');
 
 console.log('first');
 
-bitmapFileHelper(Transformer);
+bitmapFileHelper.turnGreen(Transformer);
 
 // call the readSync to get the file and then have the properties to output to
 // call the constructor and have the properties to output to
