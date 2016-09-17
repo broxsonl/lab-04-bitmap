@@ -2,22 +2,21 @@
 
 const fs = require('fs');
 
-const buf = fs.readFileSync('../../assets/bitmap.bmp');
+//const bitmapFileHelper = require('../lib/bitmapFileHelper.js')
 
-function Transformer(){
+const Transformer = function(buf){
   this.filesize = buf.readUInt32LE(2);
   this.offset = buf.readUInt32LE(10);
   this.colorArray = buf.slice(54, 1078);
 }
 
-var duck = new Transformer();
-console.log(duck);
-
-Transformer.prototype.turnGreen = function(){
+Transformer.prototype.turnGreen = function(buf){
+  console.log('fourth');
+  console.log(buf);
   var currentColor;
     for (var i = 0;i < 1024;i += 4){
       currentColor = this.colorArray.slice(i, i+4);
-      console.log('B' + currentColor[0] + ' + ' + 'G' + currentColor[1] + ' + ' + 'R' + currentColor[2] + ' + ' + 'A' + currentColor[3]);
+     //console.log('B' + currentColor[0] + ' + ' + 'G' + currentColor[1] + ' + ' + 'R' + currentColor[2] + ' + ' + 'A' + currentColor[3]);
       currentColor[0] = 0;
       currentColor[1] = 255;
       currentColor[2] = 0;
@@ -25,8 +24,13 @@ Transformer.prototype.turnGreen = function(){
     }
     fs.writeFileSync('./newfile.bmp', buf);
 }
+module.exports = function greenDuck(buf){
+  console.log('third');
+  console.log(buf);
+  var duck = new Transformer(buf);
+  duck.turnGreen(buf);
 
-duck.turnGreen();
+}
 // function BitmapConstructor(buf) {
 //   this.filesize = buf.readUInt32LE(2);
 //   this.offset = buf.readUInt32LE(10);
