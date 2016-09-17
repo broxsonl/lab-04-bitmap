@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 
+module.exports = exports = {};
 //const bitmapFileHelper = require('../lib/bitmapFileHelper.js')
 
 const Transformer = function(buf){
@@ -10,9 +11,8 @@ const Transformer = function(buf){
   this.colorArray = buf.slice(54, 1078);
 }
 
+
 Transformer.prototype.turnGreen = function(buf){
-  console.log('fourth');
-  console.log(buf);
   var currentColor;
     for (var i = 0;i < 1024;i += 4){
       currentColor = this.colorArray.slice(i, i+4);
@@ -23,13 +23,13 @@ Transformer.prototype.turnGreen = function(buf){
       currentColor[3] = 0;
     }
 }
+
 module.exports = function greenDuck(buf){
-  console.log('third');
-  console.log(buf);
   var duck = new Transformer(buf);
   duck.turnGreen(buf);
 
 }
+
 // function BitmapConstructor(buf) {
 //   this.filesize = buf.readUInt32LE(2);
 //   this.offset = buf.readUInt32LE(10);
