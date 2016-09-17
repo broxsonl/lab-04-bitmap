@@ -14,8 +14,10 @@ module.exports = function(callback) {
     console.log('buf',buf);
     console.log('second');
     callback(buf);
+    fs.writeFile('./newfile.bmp', buf);
   });
 }
-//module.exports();
+
+
 
 //fs.writeFileSync('./newfile.bmp', buf);

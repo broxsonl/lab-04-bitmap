@@ -22,7 +22,6 @@ Transformer.prototype.turnGreen = function(buf){
       currentColor[2] = 0;
       currentColor[3] = 0;
     }
-    fs.writeFileSync('./newfile.bmp', buf);
 }
 module.exports = function greenDuck(buf){
   console.log('third');
