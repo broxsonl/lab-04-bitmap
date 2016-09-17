@@ -4,20 +4,35 @@ const fs = require('fs');
 
 const Transformer = require('../model/bitmapConstructor.js');
 
+module.exports = exports = {};
+
 //const buf = fs.readFileSync('../../assets/bitmap.bmp');
 
 var buf;
 
-module.exports = function(callback) {
+exports.turnGreen = function(callback) {
   fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
     buf = data;
-    console.log('buf',buf);
-    console.log('second');
     callback(buf);
-    fs.writeFile('./newfile.bmp', buf);
+    fs.writeFile('./green-bitmap.bmp', buf);
   });
-}
+};
 
+exports.invertColor = function(callback) {
+  fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
+    buf = data;
+    callback(buf);
+    fs.writeFile('./inverted-bitmap.bmp', buf);
+  });
+};
+
+exports.grayScale = function(callback) {
+  fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
+    buf = data;
+    callback(buf);
+    fs.writeFile('./grayscale-bitmap.bmp', buf);
+  });
+};
 
 
 //fs.writeFileSync('./newfile.bmp', buf);
