@@ -9,7 +9,7 @@ exports.turnGreen = function(callback) {
     if(err) throw new Error('bitmap buffer not acquired');
     buf = data;
     callback(buf);
-    fs.writeFile('./green-bitmap.bmp', buf);
+    fs.writeFile(`${__dirname}/../transformed-assets/greenscale-bitmap.bmp`, buf);
   });
 };
 
@@ -18,7 +18,7 @@ exports.invertColor = function(callback) {
     if(err) throw new Error('bitmap buffer not acquired');
     buf = data;
     callback(buf);
-    fs.writeFile('./inverted-bitmap.bmp', buf);
+    fs.writeFile(`${__dirname}/../transformed-assets/inverted-bitmap.bmp`, buf);
   });
 };
 
@@ -27,6 +27,6 @@ exports.grayScale = function(callback) {
     if(err) throw new Error('bitmap buffer not acquired');
     buf = data;
     callback(buf);
-    fs.writeFile('./grayscale-bitmap.bmp', buf);
+    fs.writeFile(`${__dirname}/../transformed-assets/grayscale-bitmap.bmp`, buf);
   });
 };
