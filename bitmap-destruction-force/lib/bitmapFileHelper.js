@@ -2,8 +2,6 @@
 
 const fs = require('fs');
 
-const Transformer = require('../model/bitmapConstructor.js');
-
 module.exports = exports = {};
 
 var buf;
@@ -31,6 +29,3 @@ exports.grayScale = function(callback) {
     fs.writeFile('./grayscale-bitmap.bmp', buf);
   });
 };
-
-
-//fs.writeFileSync('./newfile.bmp', buf);
