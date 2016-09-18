@@ -1,12 +1,8 @@
 'use strict';
 
 const fs = require('fs');
-
-const Transformer = require('../model/bitmapConstructor.js');
-
-module.exports = exports = {};
-
 var buf;
+module.exports = exports = {};
 
 exports.turnGreen = function(callback) {
   fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
@@ -31,6 +27,3 @@ exports.grayScale = function(callback) {
     fs.writeFile('./grayscale-bitmap.bmp', buf);
   });
 };
-
-
-//fs.writeFileSync('./newfile.bmp', buf);
