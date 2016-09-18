@@ -15,9 +15,10 @@ GrayScale.prototype.grayScale = function(){
   var currentColor;
   for (var i = 0;i < 1024;i += 4){
     currentColor = this.colorArray.slice(i, i+4);
-    currentColor[0] = 0;
-    currentColor[1] = 0;
-    currentColor[2] = 255;
+    var currentColorAverage = ((currentColor[0] + currentColor[1] + currentColor[2])/3);
+    currentColor[0] = currentColorAverage;
+    currentColor[1] = currentColorAverage;
+    currentColor[2] = currentColorAverage;
     currentColor[3] = 0;
   }
 };
