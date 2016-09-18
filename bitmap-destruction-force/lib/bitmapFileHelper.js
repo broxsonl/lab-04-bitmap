@@ -6,8 +6,6 @@ const Transformer = require('../model/bitmapConstructor.js');
 
 module.exports = exports = {};
 
-//const buf = fs.readFileSync('../../assets/bitmap.bmp');
-
 var buf;
 
 exports.turnGreen = function(callback) {
