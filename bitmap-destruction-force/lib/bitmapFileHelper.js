@@ -7,6 +7,7 @@ module.exports = exports = {};
 exports.turnGreen = function(callback) {
   fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
     buf = data;
+    console.log(buf);
     callback(buf);
     fs.writeFile('./green-bitmap.bmp', buf);
   });
