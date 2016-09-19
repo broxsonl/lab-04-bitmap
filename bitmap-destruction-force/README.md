@@ -7,7 +7,8 @@ Lee Broxson, Peter Kim
 ##How to use this application
 
 **Original 8-bit color bitmap**
-![alt tag](../assets/bitmap.bmp)
+
+      ![alt tag](../assets/bitmap.bmp)
 
 This application's intent is to easily transform an 8-bit color bitmap file to either greenscale, grayscale or an inverted version of the original bitmap being used.
 
@@ -23,7 +24,7 @@ In the primary repository, enter the following command:
 
       node index.js bitmapFileHelper.turnGreen(Greenscaler.greenScale);
 
-![alt tag](./transformed-assets/greenscale-bitmap.bmp)
+      ![alt tag](./transformed-assets/greenscale-bitmap.bmp)
 
 **Example of grayscaled bitmap**
 
@@ -31,7 +32,7 @@ In the primary repository, enter the following command:
 
       node index.js bitmapFileHelper.grayScale(Grayscaler.grayScale);
 
-![alt tag](./transformed-assets/grayscale-bitmap.bmp)
+      ![alt tag](./transformed-assets/grayscale-bitmap.bmp)
 
 **Example of invert-colored bitmap**
 
@@ -39,6 +40,6 @@ In the primary repository, enter the following command:
 
       node index.js bitmapFileHelper.invertColor(Inverter.invert);
 
-![alt tag](./transformed-assets/inverted-bitmap.bmp)
+      ![alt tag](./transformed-assets/inverted-bitmap.bmp)
 
 More features and different bitmap transformers to come!
