@@ -2,7 +2,8 @@
 
 module.exports = exports = {};
 
-exports.grayScale = function(buf){
+exports.grayScale = function(buf, err){
+  if (err) throw new Error('Error grayscaling bitmap');
   var duck = new exports.GrayScale(buf);
   duck.grayScale(buf);
 };

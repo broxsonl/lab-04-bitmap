@@ -27,8 +27,8 @@ describe('testing bitmapFileHelper', function(){
         done();
       });
     });
-    it('should return an error', function() {
-      bitmapFileHelper.turnGreen([`${__dirname}/dont-exist.bmp`], function(err, data){
+    it('should be a valid filename', function() {
+      bitmapFileHelper.turnGreen([`${__dirname}/dont-exist.bmp`], function(err){
         assert.ifError(err);
       });
     });
