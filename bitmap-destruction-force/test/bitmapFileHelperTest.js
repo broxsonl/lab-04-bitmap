@@ -3,7 +3,7 @@
 const bitmapFileHelper = require('../lib/bitmapFileHelper.js');
 const assert = require('assert');
 
-describe('bitmapFileHelper', function(){
+describe('testing bitmapFileHelper', function(){
   describe('#turnGreen', function(){
     it('should return buffer data', function(done){
       bitmapFileHelper.turnGreen(function(buf){
@@ -25,6 +25,11 @@ describe('bitmapFileHelper', function(){
       bitmapFileHelper.grayScale(function(buf){
         assert.ok(buf, 'is not buffer data');
         done();
+      });
+    });
+    it('should return an error', function() {
+      bitmapFileHelper.turnGreen([`${__dirname}/dont-exist.bmp`], function(err, data){
+        assert.ifError(err);
       });
     });
   });

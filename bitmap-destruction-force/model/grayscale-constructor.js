@@ -1,17 +1,19 @@
 'use strict';
 
-module.exports = function grayScale(buf){
-  var duck = new GrayScale(buf);
+module.exports = exports = {};
+
+exports.grayScale = function(buf){
+  var duck = new exports.GrayScale(buf);
   duck.grayScale(buf);
 };
 
-const GrayScale = function(buf){
+exports.GrayScale = function(buf){
   this.filesize = buf.readUInt32LE(2);
   this.offset = buf.readUInt32LE(10);
   this.colorArray = buf.slice(54, 1078);
 };
 
-GrayScale.prototype.grayScale = function(){
+exports.GrayScale.prototype.grayScale = function(){
   var currentColor;
   for (var i = 0;i < 1024;i += 4){
     currentColor = this.colorArray.slice(i, i+4);

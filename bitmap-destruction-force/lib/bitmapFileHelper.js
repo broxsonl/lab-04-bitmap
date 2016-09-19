@@ -8,7 +8,6 @@ exports.turnGreen = function(callback) {
   fs.readFile(`${__dirname}/../../assets/bitmap.bmp`, function(err, data){
     if(err) throw new Error('bitmap buffer not acquired');
     buf = data;
-    console.log(buf);
     callback(buf);
     fs.writeFile(`${__dirname}/../transformed-assets/greenscale-bitmap.bmp`, buf);
   });

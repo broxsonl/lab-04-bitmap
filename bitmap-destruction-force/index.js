@@ -9,4 +9,4 @@ const Grayscaler = require('./model/grayscale-constructor.js');
 //Running node on index.js will produce three unique bitmaps with the function invocations below:
 bitmapFileHelper.turnGreen(Greenscaler); //Greenscales the bitmap
 bitmapFileHelper.invertColor(Inverter); //Inverts the colors of the bitmap
-bitmapFileHelper.grayScale(Grayscaler); //Grayscales the colors of the bitmap
+bitmapFileHelper.grayScale(Grayscaler.grayScale); //Grayscales the colors of the bitmap
