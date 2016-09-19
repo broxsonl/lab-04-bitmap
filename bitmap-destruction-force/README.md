@@ -3,3 +3,5 @@
 **Members:**
 
 Lee Broxson, Peter Kim
+
+![alt tag](assets/bitmap.bmp)
