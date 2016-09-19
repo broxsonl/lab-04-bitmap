@@ -1,17 +1,19 @@
 'use strict';
 
-module.exports = function invertDuck(buf){
-  var duck = new Inverter(buf);
+module.exports = exports = {};
+
+exports.invert = function(buf){
+  var duck = new exports.Inverter(buf);
   duck.invertColor(buf);
 };
 
-const Inverter = function(buf){
+exports.Inverter = function(buf){
   this.filesize = buf.readUInt32LE(2);
   this.offset = buf.readUInt32LE(10);
   this.colorArray = buf.slice(54, 1078);
 };
 
-Inverter.prototype.invertColor = function(){
+exports.Inverter.prototype.invertColor = function(){
   var currentColor;
   for (var i = 0;i < 1024;i += 4){
     currentColor = this.colorArray.slice(i, i+4);
