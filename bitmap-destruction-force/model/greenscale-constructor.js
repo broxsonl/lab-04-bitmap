@@ -1,17 +1,19 @@
 'use strict';
 
-module.exports = function greenDuck(buf){
-  var duck = new Greenscaler(buf);
+module.exports = exports = {};
+
+exports.greenScale = function(buf){
+  var duck = new exports.GreenScaler(buf);
   duck.turnGreen(buf);
 };
 
-const Greenscaler = function(buf){
+exports.GreenScaler = function(buf){
   this.filesize = buf.readUInt32LE(2);
   this.offset = buf.readUInt32LE(10);
   this.colorArray = buf.slice(54, 1078);
 };
 
-Greenscaler.prototype.turnGreen = function(){
+exports.GreenScaler.prototype.turnGreen = function(){
   var currentColor;
   for (var i = 0;i < 1024;i += 4){
     currentColor = this.colorArray.slice(i, i+4);
